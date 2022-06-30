@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/art_objects_fragment">
+
+    <fragment
+        android:id="@+id/art_objects_fragment"
+        android:name="com.cerenb.samples.apps.rijksmuseumcollections.ui.view.ArtObjectsFragment"
+        android:label="@string/art_objects"
+        tools:layout="@layout/fragment_art_objects">
+        <action
+            android:id="@+id/action_art_objects_fragment_to_art_object_detail_fragment"
+            app:destination="@+id/art_object_detail_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/art_object_detail_fragment"
+        android:name="com.cerenb.samples.apps.rijksmuseumcollections.ui.view.ArtObjectDetailFragment"
+        android:label="@string/art_object_detail"
+        tools:layout="@layout/fragment_art_object_detail">
+        <argument
+            android:name="object_number"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

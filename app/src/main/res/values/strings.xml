@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RijksMuseumCollections</string>
+    <string name="art_objects">Rijks Museum Art Collection</string>
+    <string name="art_object_detail"> Art Objects Detail</string>
+    <string name="art_image">Art Image</string>
+    <string name="retry">Retry</string>
+    <string name="generic_error_message">Error occured, try again later!</string>
+    <string name="loading">Loading</string>
+</resources>
