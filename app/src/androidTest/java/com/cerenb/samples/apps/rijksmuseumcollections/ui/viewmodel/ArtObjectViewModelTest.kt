@@ -58,7 +58,7 @@ class ArtObjectViewModelTest {
                     differ.submitData(pagingData)
                 }
             }
-
+            
             advanceUntilIdle()
 
             val actualList = differ.snapshot()
