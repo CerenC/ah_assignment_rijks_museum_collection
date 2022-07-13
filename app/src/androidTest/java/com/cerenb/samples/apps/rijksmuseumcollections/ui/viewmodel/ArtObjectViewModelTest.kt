@@ -10,14 +10,17 @@ import com.cerenb.samples.apps.rijksmuseumcollections.test.FakeRepository
 import com.cerenb.samples.apps.rijksmuseumcollections.test.MainCoroutineRule
 import com.cerenb.samples.apps.rijksmuseumcollections.ui.adapter.ArtObjectsDiffCallback
 import com.cerenb.samples.apps.rijksmuseumcollections.ui.model.ArtObjectListItem
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
+import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
+@OptIn(ExperimentalCoroutinesApi::class)
 class ArtObjectViewModelTest {
 
     @get:Rule
@@ -66,8 +69,8 @@ class ArtObjectViewModelTest {
                 ArtObjectListItem.ArtObjectHeader(artObjects[2].principalOrFirstMaker),
                 ArtObjectListItem.ArtObjectItem(artObjects[2])
             )
-            //collecting paging data not working on separate job
-            // assertEquals(expectedList, actualList)
+
+            assertEquals(expectedList, actualList)
 
             job.cancel()
         }
